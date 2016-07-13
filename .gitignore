@@ -1,0 +1,16 @@
+*.log
+*.pot
+*.pyc
+*.swp
+*.db
+.DS_Store
+*.save
+db.sqlite
+*~
+local.py
+which.py
+build/
+node_modules/
+bower_components/
+bower/
+.sass-cache/
