@@ -92,7 +92,6 @@ def logout(request):
     auth.logout(request)
     return render(request, 'saml2idp/logged_out.html')
 
-
 @login_required
 @csrf_exempt
 def slo_logout(request):
