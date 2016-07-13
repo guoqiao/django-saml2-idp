@@ -32,6 +32,8 @@ USE_I18N = True
 
 USE_L10N = True
 
+STATIC_URL = '/static/'
+
 MEDIA_ROOT = ''
 
 MEDIA_URL = '/media/'
@@ -76,6 +78,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.staticfiles',
     'saml2idp',
 )
 
