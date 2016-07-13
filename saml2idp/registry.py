@@ -3,8 +3,8 @@ Registers and loads Processor classes from settings.
 """
 # Python imports
 import logging
+from importlib import import_module
 # Django imports
-from django.utils.importlib import import_module
 from django.core.exceptions import ImproperlyConfigured
 # Local imports
 import exceptions
