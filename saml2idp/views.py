@@ -46,6 +46,7 @@ def login_begin(request, *args, **kwargs):
     request.session['RelayState'] = source['RelayState']
     return redirect('login_process')
 
+
 @login_required
 def login_init(request, resource, **kwargs):
     """
@@ -68,6 +69,7 @@ def login_init(request, resource, **kwargs):
     proc.init_deep_link(request, sp_config, url)
     return _generate_response(request, proc)
 
+
 @login_required
 def login_process(request):
     """
@@ -79,6 +81,7 @@ def login_process(request):
     proc = registry.find_processor(request)
     return _generate_response(request, proc)
 
+
 @csrf_exempt
 def logout(request):
     """
@@ -87,7 +90,8 @@ def logout(request):
     though it's technically not SAML 2.0).
     """
     auth.logout(request)
-    return render(request, 'saml2idp/logged_out.html', context={})
+    return render(request, 'saml2idp/logged_out.html')
+
 
 @login_required
 @csrf_exempt
@@ -104,7 +108,7 @@ def slo_logout(request):
     #TODO: Format a LogoutResponse and return it to the browser.
     #XXX: For now, simply log out without validating the request.
     auth.logout(request)
-    return render(request, 'saml2idp/logged_out.html', context={})
+    return render(request, 'saml2idp/logged_out.html')
 
 
 def descriptor(request):
